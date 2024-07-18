@@ -1,0 +1,695 @@
+*{margin: 0;
+padding: 0;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+overflow-x: hidden;
+scroll-behavior: smooth;}
+
+
+
+
+/* body{
+  background: linear-gradient(to top, rgb(251, 194, 235) 0%, rgb(166, 193, 238) 100%);} */
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url(Background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+header{
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 2%;
+    padding-right: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.logo{
+    margin-right: 25%;
+    margin-left: 5%;
+}
+
+nav{
+    width: 1000;
+    height: 100;
+    background-color: rgba(255, 255, 255, 0.502);
+    border-radius: 10px;   
+}
+
+
+nav ul {
+  list-style: none;
+  /* In CSS, the list-style property is used to set the style of the bullet or marker for a list item in an ordered or unordered list. */
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  /* In CSS, the text-decoration property is used to add decorative lines to text. 
+  It can be used to apply or remove underlines, overlines, 
+  and strikethroughs on text. */
+  color: rgb(0, 0, 0);
+  /* The rgb(0, 0, 0) value is a specific color value that represents black. 
+  It is made up of three values that range from 0 to 255. The first value represents the red component, 
+  the second value represents the green component, and the third value represents the blue component. */
+  font-weight: 500;
+  text-transform: uppercase;
+  /* to change the case of text */
+  margin: 0 10px;
+  font-size: 70%;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+  /* In CSS, the transition property allows you to create smooth and gradual changes in the values of CSS properties over a specified duration of time. 
+  It allows you to specify the properties that should be transitioned, 
+  the duration of the transition, 
+  and the type of transition effect. */
+}
+nav ul li a:hover {
+  color: rgb(95, 75, 156);
+}
+
+
+nav.shift ul li a {
+    position:relative;
+    z-index: 1;
+    /* In CSS, the z-index property is used to specify the stack order of elements, 
+    or in other words, the order in which elements are layered on top of each other. 
+    Elements with a higher z-index will appear in front of elements with a lower z-index. */
+  }
+  nav.shift ul li a:hover {
+    color: #91640F;
+  }
+  nav.shift ul li a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    /* In CSS, the content property is used to generate content for a specific element. 
+    It is commonly used in conjunction with the :before and :after pseudo-elements. 
+    These pseudo-elements allow you to insert content before or after a specified element, 
+    such as adding a symbol or icon before a list item or adding text after a link. */
+    color: transparent;
+    background: #F1C40F;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+  }
+  nav.shift ul li a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+  }
+  
+  
+
+
+
+
+/*  */
+* {box-sizing: inherit;} 
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* The indicators for slideshow */
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(166, 109, 173);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #4f5e82;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+
+/* about and image  */
+#about {
+  margin-top: 3%;
+  padding-bottom: 3%;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
+
+/* donations style */
+
+
+.bg-image {
+  background-image: url("Background.png");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+
+
+}
+
+.image {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transition: .5s ease;
+  transform: translate(-50%, -50%);
+  border-radius: 2%;
+}
+
+.button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background-color: #7a59aa;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 2%;
+}
+
+.changer:hover .image{
+  opacity: 0.3;
+}
+
+.changer:hover .button {
+  display: block;
+}
+
+
+/* Book An Appointment */
+
+
+/* align items center vertically and horizontally  */
+.container3{
+  display: flex;
+  justify-content: center;
+  align-items:center !important;
+  /* In CSS, align-items is a property of the Flexbox layout module. 
+  It sets the alignment of items along the cross axis of a flex container. 
+  The !important keyword is used to override any conflicting CSS styles that may have been previously defined.
+ */
+  margin-left:30%; 
+  height: 100vh;
+  border-radius: 2%;
+  overflow-y: hidden;
+  /* In CSS, the overflow-y property is used to control the behavior of content that exceeds the size of its container along the y-axis (vertically). */
+}
+.form{
+  width: 350px;
+  height: 450px;
+  background-color: rgba(41, 39, 39, 0.3);
+  box-shadow: 0 5px 30px rgb(78, 72, 87);
+    border-radius: 2%;
+    /* gives or control the edges of a div */
+
+}
+.btn button {
+  padding: 3px;
+  margin: 30px 0px 40px 30px;
+  border-style: none;
+  background-color: transparent;
+  color: rgb(222, 198, 249);
+  font-size: 18px;
+  font-weight: 550;
+}
+.formGroup{
+  display: flex;
+  justify-content: center;
+}
+.formGroup input{
+  border: none;
+  width: 80%;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+}
+input:focus {
+  outline: none !important;
+  /* In CSS, the outline property is used to set the style of the outline around an element. 
+  An outline is a line that appears around an element, outside of the border, 
+  when the element is focused. By default, most web browsers will apply a default style to the outline, w
+  hich may include a color, width, and style (such as dotted or solid). */
+  border-bottom: 2px solid rgb(91, 243, 131);
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
+::placeholder {
+  color: white;
+}
+.checkBox{
+  display: flex;
+  justify-content: center;
+  margin: 16px!important;
+}
+ 
+#checkbox{
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+}
+.text{
+  color: rgb(199, 197, 197);
+  font-size: 13px;
+}
+.btn2{
+  padding: 10px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: rgb(104, 10, 136);
+  border-style: none;
+  color: white;
+  font-weight: 600;
+}
+.btn2:hover{
+  background-color: rgba(25, 10, 136, 0.5);
+}
+.btn button:hover{
+  border-bottom: 2px solid rgb(91, 137, 243);
+}
+ 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  /* The -webkit-appearance, -moz-appearance, -ms-appearance, and appearance CSS properties are used to remove 
+  or 
+  change the default styling of certain HTML elements,
+  such as select, input, button, etc.
+  The -webkit-appearance, -moz-appearance, and
+   -ms-appearance properties are vendor prefixes for the appearance property 
+   and are used to ensure compatibility with different browsers. */
+  outline: 0;
+  
+  background: rgba(255, 255, 255, 0.096);
+  background-image: none;
+}
+     
+.select {
+  position: relative;
+  display: block;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e5000;
+  overflow: hidden;
+  margin-left: 7%;
+
+}
+     
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  /* In CSS, the cursor property is used to change the appearance of the cursor when it hovers over an element on a website. */
+    }
+     
+select::-ms-expand {
+  display: none;
+}
+     
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #bf76c6;
+  pointer-events: none;
+  /* In CSS, the pointer-events property is used to control whether an element can be the target of pointer events, 
+  such as mouse clicks or touch events. */
+}
+     
+.select:hover::after {
+  color: #3412f3;
+}
+.select::after {
+  -webkit-transition: 0.25s all ease;
+  -o-transition:0.25s all ease;
+  /* The -webkit-transition, -o-transition properties in CSS are used 
+  to create a smooth transition effect when changing from one CSS property value to another.  */
+  transition:0.25s all ease;
+}
+
+
+/* Newsletter */
+.parent-wrapper {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  margin: 40px auto 0;
+  background-image: url('Newslettershadow.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: -600%;
+  background-color: #000;
+  border-radius: 4px;
+  color: #FFF;
+  box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  margin: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.subscribe-wrapper {
+  position: absolute;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 300px;
+  padding: 30px;
+  background-image: url('Newsletterbg.png');
+  background-position-x: 272%;
+  background-position-y: -1px;
+  background-repeat: no-repeat;
+  background-color: #FFF;
+  border-radius: 4px;
+  color: #333;
+  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
+}
+
+.subscribe-wrapper:after {
+  position: absolute;
+  content: "";
+  right: -10px;
+  bottom: 71px;
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #7149c7;
+}
+
+.subscribe-wrapper h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 28px;
+}
+
+.subscribe-wrapper input {
+  position: absolute;
+  bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #b95050;
+  padding: 10px;
+  width: 65%;
+  background: transparent;
+  transition: all .25s ease;
+}
+
+.subscribe-wrapper input:focus {
+  outline: none;
+  border-bottom: 1px solid #a77cf4;
+}
+
+.subscribe-wrapper .submit-btn {
+  position: absolute;
+  border-radius: 30px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #a77cf4;
+  color: #FFF;
+  padding: 12px 25px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  right: -10px;
+  bottom: 30px;
+  cursor: pointer;
+  transition: all .25s ease;
+  box-shadow: -5px 6px 20px 0px rgba(51, 51, 51, 0.4);
+  margin-right: 2%;
+}
+
+.subscribe-wrapper .submit-btn:hover {
+  background-color: #8e62dc;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  position: relative;
+  height: auto;
+  background-color: #070617;
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+.footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color: rgba(255,255,255,0.2);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+.footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .col ul li {
+  color: #999999;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+}
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  color: #ffffff;
+  transition: .1s;
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+}
+.clearfix {
+  clear: both;
+}
+@media only screen and (min-width: 1280px) {
+  .contain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .contain .social {
+    width: 1000px;
+    display: block;
+  }
+  .social h1 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .footer .col {
+    width: 33%;
+  }
+  .footer .col h1 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 50%;
+    }
+    .footer .col h1 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+  .footer .col {
+    width: 100%;
+  }
+}
